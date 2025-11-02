@@ -4,7 +4,7 @@
         {
             "label": "Atualizar GitHub",
             "type": "shell",
-            "command": "git add .; git commit -m 'Atualização rápida'; git push origin main",
+            "command": "git add .; git commit -m 'Update'; git push origin main",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
