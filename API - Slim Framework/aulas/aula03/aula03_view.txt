@@ -1,0 +1,9 @@
+<?php
+
+namespace MyApp;
+
+class View {
+    public function visualizer() {
+        echo 'dorime';
+    }
+}
