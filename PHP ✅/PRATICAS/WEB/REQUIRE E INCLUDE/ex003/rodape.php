@@ -1,0 +1,1 @@
+<?echo '© 2025 Minha Empresa. Todos os direitos reservados.';?>

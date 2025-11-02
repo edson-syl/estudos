@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX003 AJAX JQUERY</title>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <label>Comentario: </label>
+        <input type="text" id="input_coment" placeholder="Escreva aqui">
+        <button>Enviar</button>
+
+    </div>
+    <div>
+        <br>
+        <h1>COMENTARIOS ADICIONADOS</h1>
+        <br>
+        <div id="comentarios"></div>
+    </div>
+
+    <script>
+        $(document).ready(() => {
+
+            const carregarDados = () => {
+                $.ajax({
+                type: 'get',
+                url: 'app.php',
+                dataType: 'json',
+                success: dados => {
+                    $('#comentarios').empty()
+                    dados.forEach(element => {
+                        $('#comentarios').append('COMENTARIO: ' + element.comentarios + '<br>')
+                    });
+                },
+                error: erro => {console.log(erro)}
+                })
+            }
+
+            
+            carregarDados();
+
+
+            $('button').click((e) => {
+                e.preventDefault()
+                var coment = $('#input_coment').val()
+
+                $.ajax({
+                type: 'post',
+                url: 'app.php',
+                data: {comentarios: coment},
+                dataType: 'json',
+                success: dados => {
+                    $('#comentarios').empty()
+                    dados.forEach(element => {
+                        $('#comentarios').append('COMENTARIO: ' + element.comentarios + '<br>')
+                    });
+                },
+                error: erro => {console.log(erro)}
+                })
+                
+            })
+        })
+    </script>
+</body>
+</html>

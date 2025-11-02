@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX007 AJAX</title>
+</head>
+<body>
+    <div id="corpo">
+        <h1>USUARIO</h1>
+        <button onclick="gerarUsuarios()">Gerar usuarios</button>
+        <br><br>
+    </div>
+    <script>
+        function gerarUsuarios() {
+            var body = document.getElementById('corpo');
+            var xhr = new XMLHttpRequest;
+            xhr.open('GET', 'https://randomuser.me/api/?results=5', true);
+            xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var dados = JSON.parse(xhr.responseText);
+                for (var i = 0; i <= dados.results.length; i++) {
+                    body.innerHTML += 
+                    '<img src="' + dados.results[i].picture.medium + '">' +
+                    "NOME: " + dados.results[i].name.first + '<br>' +
+                    "E-MAIL: " + dados.results[i].email + '<br>' 
+                    
+                }
+
+                }
+            }
+            xhr.send()
+        }
+        
+    </script>
+</body>
+</html>

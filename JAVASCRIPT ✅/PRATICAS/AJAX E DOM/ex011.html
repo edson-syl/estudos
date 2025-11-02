@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX011 AJAX</title>
+</head>
+<body>
+    <H1>JORNAL DIARIO</H1>
+    
+    <div id="noticias">
+        <h2>NOTICIAS</h2>
+    </div>
+
+    <script>
+        var bodynoticias = document.getElementById('noticias')
+        var contagemnoticias = 0;
+        var intervalo = null;
+        var numnoticia = 0;
+        function novaNoticia() {
+            if (contagemnoticias >= 4) {
+                return;
+            }
+
+            var xhr = new XMLHttpRequest;
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts?utm_source=chatgpt.com', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    contagemnoticias += 1;
+                    numnoticia += 1
+                    var not = JSON.parse(xhr.responseText);
+                    bodynoticias.innerHTML += 
+                    '<div id="noticia' + not[numnoticia].id + '">' +
+                    '<h1>' + not[numnoticia].title + '</h1>' +
+                    '<p>' + not[numnoticia].id + '</p>' +
+                    '<p>' + not[numnoticia].body + '</p>' +
+                    '<button onclick="apagarNoticia(this)">Marcar como lida</button>' +
+                    '</div>';
+
+                    if (contagemnoticias >= 4 && intervalo) {
+                        clearInterval(intervalo);
+                        intervalo = null;
+                    }
+                }
+            }
+            xhr.send()
+        }
+
+        function apagarNoticia(id) {
+            contagemnoticias -= 1;
+            if (contagemnoticias < 4 && !intervalo) {
+            intervalo = setInterval(novaNoticia, 2000);
+            console.log("Intervalo reiniciado");
+            };
+            var elemento = id.parentNode;
+            elemento.remove();
+                        
+
+        }
+        var intervalo = setInterval(novaNoticia, 2000);
+        
+        
+
+    </script>
+</body>
+</html>

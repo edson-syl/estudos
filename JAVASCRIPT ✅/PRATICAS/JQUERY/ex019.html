@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX019 JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>EX019 JQUERY</title>
+    <style>
+        ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        li {
+            padding-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><button>Inicio</button></li>
+            <li><button id="btn-menu">Menu</button></li>
+            <li><button>Sobre</button></li>
+        </ul>
+        <div id="menu" style="background-color: grey ; width: 100px; height: 100px;">
+            <p>Menu aberto!</p>
+        </div>
+    </nav>
+
+    <script>
+        $('#menu').hide()
+        $('#btn-menu').click(() => {
+            $('#menu').slideToggle(1000)
+        })
+    </script>
+</body>
+</html>

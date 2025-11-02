@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX009 JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li class="destaque">2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        $('.destaque').siblings().each(function(index) {
+            var valor = index += 1    
+            $(this).html('Novo valor: ' + valor)
+        })
+    </script>
+</body>
+</html>

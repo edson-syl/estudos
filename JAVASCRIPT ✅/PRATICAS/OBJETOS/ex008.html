@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX008 OBJETO</title>
+</head>
+<body>
+    <script>
+        var notas = new Object();
+        notas["matematica"] = 10;
+        notas["portugues"] = 7;
+        notas["geografia"] = 9;
+
+        var buscarnot = prompt("Qual materia? ");
+        !(buscarnot in notas) ? window.alert("Materia invalida!") : window.alert("Sua nota e: " + notas[buscarnot]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX003 OBJETO</title>
+</head>
+<body>
+    <script>
+        function Pessoa(nome, idade) {
+            this.nome = nome;
+            this.idade = idade;
+            
+            this.info = function() {
+                console.log("Nome: " + nome + "\nIdade: " + idade)
+            }
+
+            this.aniversario = function() {
+                idade += 1;
+                console.log("Parabens! Voce fez " + idade + " anos!")
+            }
+        }
+
+        p1 = new Pessoa("Edson", 19)
+        p1.info();
+        p1.aniversario();
+        p1.info();
+    </script>
+</body>
+</html>

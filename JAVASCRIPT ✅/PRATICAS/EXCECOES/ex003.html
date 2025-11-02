@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX003 EXCECAO</title>
+</head>
+<body>
+    <script>
+        function dividir(a, b) {
+            try {
+                if (b == 0) {
+                    throw new Error("Nao e possivel dividir por zero!")
+                }
+                divisao = a / b;
+                console.log(divisao);
+             }
+             catch (e) {
+                console.log(e.message)
+             }
+        }
+
+        dividir(10,0);
+    </script>
+</body>
+</html>

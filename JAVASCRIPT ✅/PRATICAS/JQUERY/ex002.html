@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX002 JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body align="center" style="width: 100%;">
+    <img src="images/image01.jfif" id="imagem01" style="width: 40%;">
+    <button onclick="mostrarImagem()">Mostrar Imagem</button>
+    <button onclick="esconderImagem()">Esconder Imagem</button>
+    <script>
+        function mostrarImagem() {
+            $('#imagem01').css('opacity', 1)
+        }
+        function esconderImagem() {
+            $('#imagem01').css('opacity', 0)
+        }
+    </script>
+</body>
+</html>

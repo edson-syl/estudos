@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX003 LACO</title>
+</head>
+<body>
+    <script>
+        var senha = 1234;
+        var tentativa = prompt('Sua senha: ')
+        do {
+
+            window.alert("Acesso negado! Tente Novamente!")
+            var tentativa = prompt('Sua senha: ')
+        } while (tentativa != senha) {
+            window.alert("Acesso liberado!")
+        }
+    </script>
+</body>
+</html>

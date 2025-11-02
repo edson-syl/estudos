@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX012 JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<style>
+    .ativo {
+        background-color: greenyellow;
+    }
+</style>
+<body>
+    <div id="1">
+        <h1>DIV 1</h1>
+    </div>
+    <div id="2">
+        <h1>DIV 2</h1>
+    </div>
+    <div id="3">
+        <h1>DIV 3</h1>
+    </div>
+
+    <script>
+        $('div').click(function() {
+            $(this).addClass('ativo')
+            $(this).siblings().removeClass('ativo')
+        })
+    </script>
+</body>
+</html>

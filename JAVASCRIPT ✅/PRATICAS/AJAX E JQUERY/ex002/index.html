@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX002 AJAX JQUERY</title>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+        <label>Comentario: </label>
+        <input placeholder="Seu comentario">
+        <button type="submit" id="btn-comentarios">Enviar comentario</button>
+    </form><br>
+
+    <button id="btn-mostrar">Mostrar comentarios</button>
+    <div>
+        <h1>COMENTARIO ATUAL</h1>
+    </div>
+
+    <script>
+        $('#btn-comentarios').click((e) => {
+            e.preventDefault()
+
+            var dadosform = $('form').serialize()
+
+            $.ajax({
+                type: 'get',
+                url: 'app.php',
+                data: dadosform,
+                dataType: 'json'
+            })
+        })
+
+        $('#btn-mostrar').click((e) => {
+            e.preventDefault()
+
+             $.ajax({
+                type: 'get',
+                url: 'app.php',
+                data: '',
+                dataType: 'json',
+                success: dados => {console.log(dados)},
+                error: erro => {console.log(erro)}
+            })
+        })
+    </script>
+</body>
+</html>

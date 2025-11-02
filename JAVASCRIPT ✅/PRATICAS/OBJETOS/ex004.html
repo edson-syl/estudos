@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX004 OBJETO</title>
+</head>
+<body>
+    <script>
+        function Pessoa(nome, idade) {
+            this.nome = nome;
+            this.idade = idade;
+        }
+
+        Pessoa.prototype.cumprimentar = function() {
+            window.alert("Ola! Meu nome eh " + this.nome);
+        }
+
+        p1 = new Pessoa("Edson", 19);
+        p1.cumprimentar();
+    </script>
+</body>
+</html>

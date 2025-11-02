@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX001 EXCECAO</title>
+</head>
+<body>
+    <script>
+        var numero = prompt("Numero: ")
+        
+        function verificarNum(num) {
+            try {
+                if (isNaN(num)) {
+                    throw new Error("Nao eh um numero!")
+                }
+                window.alert("Eh um numero!")
+            }
+            catch (e){
+                window.alert(e.message)
+            }
+        }
+
+        verificarNum(numero);
+    </script>
+</body>
+</html>

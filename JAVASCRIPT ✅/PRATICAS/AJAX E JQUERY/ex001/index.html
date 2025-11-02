@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX001 AJAX JQUERY</title>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <form>
+            <label>Nome: </label>
+            <input name="nome" placeholder="Seu nome" required><br>
+            <label>E-mail: </label>
+            <input name="email" placeholder="Seu e-mail" required><br>
+            <label>Mensagem: </label>
+            <textarea></textarea><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        $('button').click((e) => {
+            e.preventDefault()
+
+            var dados = $('form').serialize()
+
+            $.ajax({
+                type: 'get',
+                url: 'app.php',
+                data: dados,
+                dataType: 'json',
+                success: dados => {console.log(dados)},
+                error: erro => {console.log(erro)}
+            })
+        })
+    </script>
+</body>
+</html>
