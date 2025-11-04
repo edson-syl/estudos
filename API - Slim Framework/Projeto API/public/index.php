@@ -31,6 +31,7 @@ $app = new \Slim\App($settings);
 $dependencies = require __DIR__ . '/../src/dependencies.php';
 $dependencies($app);
 $container = $app->getContainer();
+$GLOBALS['container'] = $container;
 $db = $container->get('db');
 
 // Register middleware

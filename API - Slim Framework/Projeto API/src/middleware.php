@@ -1,6 +1,16 @@
 <?php
 
 return function ($app) {
+    global $container;
+
+    $app->add(new Tuupola\Middleware\JwtAuthentication([
+    "header" => "token",
+    "regexp" => "/(.*)/",
+    "path" => "/api", /* or ["/api", "/admin"] */
+    "ignore" => ["/api/token"],
+    "secret" =>$container->get('settings')['secretKey']
+]));
+
     $app->add(function ($req, $res, $next) {
         $response = $next($req, $res);
         return $response
