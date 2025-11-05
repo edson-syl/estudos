@@ -1,0 +1,41 @@
+// For
+@for $i from 1 through 3 {
+  .item-#{$i} {
+    background-color: green;
+    margin-bottom: 3px;
+  }
+}
+
+// While
+$count: 1;
+@while $count <= 3 {
+  .item-#{$count} {
+    background-color: red !important;
+  }
+  $count: $count + 1;
+}
+
+// Each
+$count: 1;
+$list: green, yellow, blue;
+@each $cor in $list {
+   .item-#{$count} {
+    background-color: $cor !important;
+  }
+  $count: $count + 1;
+}
+
+// Functions
+$total-column: 12;
+@function width-column($column) {
+  @return percentage($column/$total);
+
+}
+
+@for $col from 1 through $total-column {
+  .col-#{$col} {
+    width: width-column($col);
+    background-color: red;
+  }
+}
+
