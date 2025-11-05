@@ -28,13 +28,13 @@ $list: green, yellow, blue;
 // Functions
 $total-column: 12;
 @function width-column($column) {
-  @return percentage($column/$total);
+  @return percentage($column/$total-column);
 
 }
 
 @for $col from 1 through $total-column {
   .col-#{$col} {
-    width: width-column($col);
+    width: width-column($col); 
     background-color: red;
   }
 }
