@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX010 AJAX</title>
+</head>
+<body>
+    <script>
+        var reqnum = 0;
+        function novaRequisicao() {
+            var xhr = new XMLHttpRequest;
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts?utm_source=chatgpt.com', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var not = JSON.parse(xhr.responseText);
+                    console.log('NOTICIA: ' + not[reqnum].title + '\nRESUMO: ' + not[reqnum].body)
+                    reqnum += 1
+                    console.log("\nNova Noticia! Agora sao " + reqnum + " noticias!")
+                }
+            }
+            xhr.send();
+        }
+
+        setInterval(novaRequisicao, 2000);
+
+    </script>
+</body>
+</html>

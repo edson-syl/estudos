@@ -1,0 +1,2 @@
+<?echo '(Tecnologia):
+A inteligência artificial está transformando a maneira como interagimos com a tecnologia. Ferramentas automatizadas tornam tarefas complexas mais rápidas e precisas, abrindo novas possibilidades em diversas áreas.<br><br>';?>

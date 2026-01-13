@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX009 OBJETO</title>
+</head>
+<body>
+    <script>
+        var estoque = new Object();
+        estoque["feijao"] = 10;
+        estoque["arroz"] = 8;
+        estoque["acucar"] = 5;
+
+        for (var i in estoque) {
+            console.log(i, estoque[i]);
+        }
+    </script>
+</body>
+</html>

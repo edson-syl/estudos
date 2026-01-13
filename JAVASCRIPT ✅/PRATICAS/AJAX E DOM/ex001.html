@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX001 DOM</title>
+</head>
+<body>
+    <div id="corpo">
+        <button onclick="Mostrartexto()">Aperte</button>
+    </div>
+
+    <script>
+        function Mostrartexto() {
+            var p = document.createElement('p');
+            p.textContent = 'Texto criado!';
+            var corpo = document.getElementById('corpo');
+            corpo.append(p);
+        }
+    </script>
+</body>
+</html>

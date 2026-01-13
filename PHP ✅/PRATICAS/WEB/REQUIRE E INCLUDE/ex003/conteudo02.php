@@ -1,0 +1,2 @@
+<?echo '(Saúde):
+Manter uma rotina de exercícios e alimentação equilibrada é essencial para o bem-estar. Pequenas mudanças diárias podem melhorar a qualidade de vida e prevenir doenças de forma eficaz.<br><br>'?>

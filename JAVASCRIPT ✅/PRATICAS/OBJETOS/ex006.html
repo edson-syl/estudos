@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX006 OBJETO</title>
+</head>
+<body>
+    <script>
+        function Carro(modelo, marca) {
+            this.modelo = modelo;
+            this.marca = marca;
+
+        }
+
+        Carro.prototype.portas = 2;
+
+        car1 = new Carro("Civic G10", "Honda");
+        console.log(car1.portas)
+    </script>
+</body>
+</html>

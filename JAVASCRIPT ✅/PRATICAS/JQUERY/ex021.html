@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>EX021 JQUERY</title>
+    <script>
+        $(document).ready(() => {
+            $('div').animate({'width' : '90%'}, {duration: 2000, step : function(now) {
+                $('p').text(Math.round(now) + '%')
+            }})
+        })
+    </script>
+</head>
+<body>
+    <div style="width: 10%; height: 30px; background-color: green; border-radius: 2px;" align="center">
+        <p style="margin: 0; line-height: 30px;"></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX005 AJAX</title>
+</head>
+<body>
+    <script>
+        var xhr = new XMLHttpRequest;
+        xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts?utm_source=chatgpt.com', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var dados = JSON.parse(xhr.responseText);
+                console.log("Titulo: " + dados[0].title + '\nResumo: ' + dados[0].body.substring(0, 50));
+            }
+        }
+        xhr.send()
+    </script>
+</body>
+</html>

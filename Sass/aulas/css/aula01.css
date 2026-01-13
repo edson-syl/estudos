@@ -1,0 +1,44 @@
+/*Aninhamento
+
+#conteudo {
+    padding: 15px;
+    background-color: $bg;
+
+    h1, h2 {
+        color: $title;
+    }
+
+    a {
+        color: $link;
+    }
+}*/
+#conteudo {
+  padding: 15px;
+  background-color: green;
+}
+#conteudo h1, #conteudo h2 {
+  color: black;
+}
+#conteudo a {
+  color: red;
+}
+#conteudo a:hover {
+  color: pink;
+}
+
+h2 {
+  color: red;
+  font-size: 20px;
+}
+
+#footer {
+  background-color: yellow;
+}
+
+h2 {
+  color: yellow;
+}
+
+.red {
+  color: red;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>EX20 JQUERY</title>
+</head>
+<body>
+    <div align="center">
+        <div id="div1" style="background-color: aquamarine; width: 100px; height: 100px; margin-top: 10%;"></div>
+    </div><br><br>
+    <button>Animar</button>
+    
+    <script>
+        $('button').click(() => {
+            $('#div1').animate({'margin-top' : '8%', 'width' : '80px'}, {duration : 500, complete: function() {
+                 $('#div1').animate({'margin-top' : '10%', 'width' : '100px'}, 500)
+            }
+            })
+        })
+    </script>
+</body>
+</html>

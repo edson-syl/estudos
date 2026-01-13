@@ -1,0 +1,62 @@
+<?php
+error_reporting(E_ALL & ~E_DEPRECATED);
+
+require 'vendor/autoload.php';
+
+$app = new \Slim\App;
+
+$app->group('/home', function() {
+
+    $this->get('', function() {
+        echo 'INICIO<br>';
+    });
+
+    $this->get('/posts', function() {
+        echo 'SUAS POSTAGENS';
+    });
+
+    $this->get('/stories', function() {
+        echo 'SEUS STORIES';
+    });
+});
+
+$app->get('/usuarios[/{id}]', function($request, $response) {
+    $id = $request->getAttribute('id');
+    echo 'LISTA DE USUARIOS<br>';
+    if ($id) {
+        echo 'OLA USUARIO ' . $id;
+    }
+    
+});
+
+$app->get('/postagens[/{ano}[/{mes}]]', function($request, $response) {
+    $ano = $request->getAttribute('ano');
+    $mes = $request->getAttribute('mes');
+
+    echo 'Lista de posts<br>';
+
+    if ($ano && $mes) {
+        echo 'Posts do mes  ' . $mes . ' de  ' . $ano;
+    }
+    else if ($ano) {
+        echo 'Posts do ano de ' . $ano;
+    }
+});
+
+$app->get('/lista{itens:.*}', function($request, $response) {
+    $itens = $request->getAttribute('itens');
+
+    var_dump(explode('/', $itens));
+}
+);
+
+$app->get('/blog/postagens/{id}', function($request, $response) {
+    echo 'Lista de postagens';
+})->setName('blog');
+
+$app->get('/meusite', function($request, $response) {
+    $blog = $this->get('router')->pathFor('blog', ['id' => 45]);
+    echo $blog;
+});
+
+$app->run();

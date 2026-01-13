@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX005 OBJETO</title>
+</head>
+<body>
+    <script>
+        function Livro(nome, autor) {
+            this.nome = nome;
+            this.autor = autor;
+        }
+
+        Livro.prototype.genero = "Literatura"
+
+        Livro.prototype.infos = function () {console.log("Livro: " + this.nome + "\nAutor: " + this.autor + "\nGenero: " + this.genero) }
+
+        l1 = new Livro("Livro do bom", "Jose Pebinha")
+        l2 = new Livro("Livro do ruim" , "Joao feioso")
+        l1.infos();
+        l2.infos();
+
+    </script>
+</body>
+</html>

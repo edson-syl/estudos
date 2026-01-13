@@ -1,0 +1,64 @@
+$bg : green;
+$title : black;
+$link : red;
+
+/*Aninhamento
+
+#conteudo {
+    padding: 15px;
+    background-color: $bg;
+
+    h1, h2 {
+        color: $title;
+    }
+
+    a {
+        color: $link;
+    }
+}*/
+
+//Referenciar seletor pai
+#conteudo {
+    padding: 15px;
+    background-color: $bg;
+
+    h1, h2 {
+        color: $title;
+    }
+
+    a {
+        color: $link;
+        &:hover {
+            color: pink;
+        }
+    }
+    
+}
+
+//Variaveis
+$title-color: red;
+$title-size: 20px;
+
+h2 {
+    color: $title-color;
+    font-size: $title-size;
+}
+
+//Escopo Variaveis
+$color-standard: red;
+#footer {
+    $color-standard: yellow !global;
+    background-color: $color-standard;
+}
+
+h2 {
+    color: $color-standard;
+}
+
+//Interpolacao
+$class : red;
+$color : color;
+
+.#{$class} {
+    #{$color} : $class;
+}

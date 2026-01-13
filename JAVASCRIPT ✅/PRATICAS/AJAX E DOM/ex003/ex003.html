@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX003 AJAX</title>
+</head>
+<body>
+    <div id="corpo">
+        <h1>NOTICIAS</h1>
+    </div>
+    <script>
+        var corpo = document.getElementById('corpo')
+        var xhr = new XMLHttpRequest;
+        xhr.open('GET', 'dados.xml', true);
+        xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var xmlDoc = xhr.responseXML;
+            var noticias = xmlDoc.getElementsByTagName('new');
+
+            for (var i = 0; i <= noticias.length; i++) {
+                 corpo.innerHTML += '<strong>' + noticias[i].getElementsByTagName('title')[0].textContent  + '</strong>' + '<br>';
+                 corpo.innerHTML += noticias[i].getElementsByTagName('content')[0].textContent + '<br><br>'
+            }
+           
+
+        }
+        }
+        xhr.send()
+        
+    </script>
+</body>
+</html>

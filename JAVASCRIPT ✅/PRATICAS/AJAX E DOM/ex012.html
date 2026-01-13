@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX012 AJAX</title>
+</head>
+<body>
+    <h1>POKEMONS</h1>
+    <div id="body">
+        <input type="text" placeholder="Nome/ID do pokemon" id="pokemonid">
+        <button onclick="buscarPokemon()">Buscar</button>
+    </div>
+    <script>
+        var bodydiv = document.getElementById('body');
+        function buscarPokemon() {
+            var pokemon = document.getElementById('pokemonid').value
+            var xhr = new XMLHttpRequest;
+            xhr.open('GET', 'https://pokeapi.co/api/v2/pokemon/' + pokemon.toLowerCase());
+            xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var dadospokemon = JSON.parse(xhr.responseText);
+                bodydiv.innerHTML += 
+                '<h2>' + dadospokemon.name + '</h2>' +
+                '<p><em>' + dadospokemon.types[0].type.name + '</em></p>' +
+                '<img src="' + dadospokemon.sprites.front_default + '">'
+                
+            }
+            }
+            xhr.send();
+        }
+        
+    </script>
+</body>
+</html>

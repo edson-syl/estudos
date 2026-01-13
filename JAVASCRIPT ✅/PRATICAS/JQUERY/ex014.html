@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX014 JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .alert {
+            background-color: darkred;
+            color: whitesmoke;
+        }
+
+        .alert-on {
+            background-color: green;
+            color: antiquewhite;
+        }
+    </style>
+    <script>
+        $(document).ready(() => {
+            $('#load').html('<p id="load" class="alert-on">Pagina: nao carregou!</p>')
+        })
+
+        $(window).scroll(() => {
+            $('#scroll').html('<p id="scroll" class="alert">Scroll: sem uso! </p>')
+        })
+
+        $(window).resize(() => {
+            $('#resize').html('<p id="resize" class="alert-on">Tela: nao redimensionou!</p>')
+        })
+    </script>
+
+</head>
+<body>
+    <div>
+        <p id="load" class="alert">Pagina: nao carregou!</p>
+        <p id="scroll" class="alert">Scroll: sem uso! </p>
+        <p id="resize" class="alert">Tela: nao redimensionou!</p>
+    </div>
+</body>
+</html>

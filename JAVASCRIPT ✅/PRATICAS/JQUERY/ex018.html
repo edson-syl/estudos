@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX018 JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>EX017 JQUERY</title>
+</head>
+<body>
+    <div style="background-color: red; width: 150px; height: 150px;"></div>
+    <button>Animar</button>
+
+    <script>
+        $('button').click(() => {
+            $('div').fadeToggle(2000)
+        })
+    </script>
+</body>
+</html>

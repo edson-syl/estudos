@@ -1,0 +1,25 @@
+<?php
+
+use MyApp\View;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface as Response;
+
+error_reporting(E_ALL & ~E_DEPRECATED);
+require 'vendor/autoload.php';
+$app = new \Slim\App;
+
+/*Container*/
+$container = $app->getContainer();
+$container['Home'] = function() {
+    return new MyApp\controllers\Home(new MyApp\View);
+};
+$app->get('/usuario', 'Home:index');
+
+/*$app->get('/service', function(Request $request, Response $response)  {
+    $service = $this->get('service');
+    var_dump($service);
+});
+*/
+
+
+$app->run();

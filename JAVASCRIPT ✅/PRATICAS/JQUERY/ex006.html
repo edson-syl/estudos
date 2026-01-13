@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX006 JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+        <h2>Escolha seus hobbies</h2>
+        <input type="checkbox" class="hobbies" value="Esportes">Esportes
+        <input type="checkbox" class="hobbies" value="Musica">Musica
+        <input type="checkbox" class="hobbies" value="Leitura">Leitura
+    </div>
+    <div class="seushobbies">
+    </div>
+
+    <script>
+        $('.hobbies').on('change', () =>  {
+            $('.seushobbies').html('<h2>Seus hobbies</h2><br>');
+            $.each($('.hobbies:checked'), (index, valor) => {
+            $('.seushobbies').append(valor.value + '<br>')
+        })
+        })
+        
+    </script>
+</body>
+</html>

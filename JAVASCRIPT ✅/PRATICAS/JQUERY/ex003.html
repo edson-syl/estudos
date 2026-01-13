@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX003 JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body align="center">
+    <img src="images/image01.jfif" width="40%" style="border-radius: 5px;"><br>
+    <button onclick="mudarImagem()">Trocar imagem</button>
+
+    <script>
+        function mudarImagem() {
+            if ($('img').attr('src') == 'images/image01.jfif') {
+                $('img').attr('src', 'images/image02.jfif')
+            }
+            else {
+                $('img').attr('src', 'images/image01.jfif')
+            }
+            
+        }
+    </script>
+</body>
+</html>

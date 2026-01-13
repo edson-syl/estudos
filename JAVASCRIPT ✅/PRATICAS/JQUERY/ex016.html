@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX016 JQUERY</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .imagem {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <img class="imagem" src="images/image01.jfif">
+        <br>
+    </div>
+    
+    <script>
+        $('img').click(function() {
+            $(this).attr('src', "images/image03.jfif");
+        })
+
+        $('img').dblclick(function() {
+            $(this).attr('src', "images/image01.jfif");
+        })
+
+        $('img').mouseenter(() => {
+            $('div').html('<img class="imagem" src="images/image01.jfif"><br><p>Olha quem chegou!</p>')
+        })
+    </script>
+</body>
+</html>

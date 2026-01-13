@@ -1,0 +1,98 @@
+.item-1 {
+  background-color: green;
+  margin-bottom: 3px;
+}
+
+.item-2 {
+  background-color: green;
+  margin-bottom: 3px;
+}
+
+.item-3 {
+  background-color: green;
+  margin-bottom: 3px;
+}
+
+.item-1 {
+  background-color: red !important;
+}
+
+.item-2 {
+  background-color: red !important;
+}
+
+.item-3 {
+  background-color: red !important;
+}
+
+.item-1 {
+  background-color: green !important;
+}
+
+.item-2 {
+  background-color: yellow !important;
+}
+
+.item-3 {
+  background-color: blue !important;
+}
+
+.col-1 {
+  width: 8.3333333333%;
+  background-color: red;
+}
+
+.col-2 {
+  width: 16.6666666667%;
+  background-color: red;
+}
+
+.col-3 {
+  width: 25%;
+  background-color: red;
+}
+
+.col-4 {
+  width: 33.3333333333%;
+  background-color: red;
+}
+
+.col-5 {
+  width: 41.6666666667%;
+  background-color: red;
+}
+
+.col-6 {
+  width: 50%;
+  background-color: red;
+}
+
+.col-7 {
+  width: 58.3333333333%;
+  background-color: red;
+}
+
+.col-8 {
+  width: 66.6666666667%;
+  background-color: red;
+}
+
+.col-9 {
+  width: 75%;
+  background-color: red;
+}
+
+.col-10 {
+  width: 83.3333333333%;
+  background-color: red;
+}
+
+.col-11 {
+  width: 91.6666666667%;
+  background-color: red;
+}
+
+.col-12 {
+  width: 100%;
+  background-color: red;
+}

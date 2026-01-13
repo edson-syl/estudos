@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX004 AJAX</title>
+</head>
+<body>
+    <script>
+        var xhr = new XMLHttpRequest;
+        xhr.open('GET', 'https://jsonplaceholder.typicode.com/users?utm_source=chatgpt.com', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var dados = JSON.parse(xhr.responseText)
+                dados.forEach(dado=> {
+                    console.log('Nome: ' + dado.name + '\nE-mail: ' + dado.email + '\nCidade: ' + dado.address.city)
+                });
+            }
+        }
+        xhr.send();
+    </script>
+</body>
+</html>

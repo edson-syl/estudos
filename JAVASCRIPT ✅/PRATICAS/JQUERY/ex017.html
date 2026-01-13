@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>EX017 JQUERY</title>
+    <style>
+        .padrao {
+            background-color: whitesmoke;
+        }
+
+        .ativo {
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <span>Nome: <input type="text" class="padrao"></span>
+    </form>
+
+    <script>
+        $('input').focus(function() {
+            $(this).removeClass('padrao');
+            $(this).addClass('ativo');
+        })
+
+        $('input').blur(function() {
+            $(this).removeClass('ativo');
+            $(this).addClass('padrao')
+        })
+    </script>
+</body>
+</html>
