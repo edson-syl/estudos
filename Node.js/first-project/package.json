@@ -1,0 +1,13 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "edson-syl",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jesus": "echo 'Salvador do mundo!'"
+  }
+}
